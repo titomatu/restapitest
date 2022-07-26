@@ -32,7 +32,7 @@ public class CommentService {
 	 */
 	public List<CommentDto> getCommentsForPost(Long postId) {
 		return this.commentRepository.findByPostId(postId)
-			.stream().map(comment -> new CommentDto(comment.getPost().getId(), comment.getAuthor(), comment.getComment(), comment.getCreationDate()))
+			.stream().map(comment -> new CommentDto(comment.getPost().getId(), comment.getComment(), comment.getAuthor(), comment.getCreationDate()))
 			.collect(Collectors.toList());
 	}
 
