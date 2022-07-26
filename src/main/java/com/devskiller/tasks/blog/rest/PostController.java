@@ -39,7 +39,7 @@ public class PostController {
 	}
 
 	@PostMapping(value = "/{id}/comments")
-	@ResponseStatus(HttpStatus.OK)
+	@ResponseStatus(HttpStatus.CREATED)
 	public Long saveComment(@PathVariable(value = "id") Long id, NewCommentDto newCommentDto){
 		return this.commentService.addComment(newCommentDto);
 	}
