@@ -33,11 +33,13 @@ public class PostController {
 	}
 
 	@GetMapping(value = "/{id}/comments")
+	@ResponseStatus(HttpStatus.OK)
 	public List<CommentDto> getComments(@PathVariable(value = "id" ) Long id){
 		return this.commentService.getCommentsForPost(id);
 	}
 
 	@PostMapping(value = "/{id}/comments")
+	@ResponseStatus(HttpStatus.OK)
 	public Long saveComment(@PathVariable(value = "id") Long id, NewCommentDto newCommentDto){
 		return this.commentService.addComment(newCommentDto);
 	}
