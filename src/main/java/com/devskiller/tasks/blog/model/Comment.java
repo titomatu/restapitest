@@ -26,8 +26,7 @@ public class Comment {
 	public Comment() {
 	}
 
-	public Comment(Long id, Post post, String comment, String author, LocalDateTime creationDate) {
-		this.id = id;
+	public Comment(Post post, String comment, String author, LocalDateTime creationDate) {
 		this.post = post;
 		this.comment = comment;
 		this.author = author;

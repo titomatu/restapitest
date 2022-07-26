@@ -1,10 +1,9 @@
 package com.devskiller.tasks.blog.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -19,6 +18,9 @@ public class Post {
 	private String content;
 
 	private LocalDateTime creationDate;
+
+	@OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
+	private List<Comment> comments = new ArrayList<>();
 
 	public String getTitle() {
 		return title;
@@ -48,4 +50,11 @@ public class Post {
 		return id;
 	}
 
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 }
