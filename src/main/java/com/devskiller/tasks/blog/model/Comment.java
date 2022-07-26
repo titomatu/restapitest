@@ -26,9 +26,9 @@ public class Comment {
 	public Comment() {
 	}
 
-	public Comment(Post post, String comment, String author, LocalDateTime creationDate) {
+	public Comment(Post post, String author, String content, LocalDateTime creationDate) {
 		this.post = post;
-		this.comment = comment;
+		this.comment = content;
 		this.author = author;
 		this.creationDate = creationDate;
 	}

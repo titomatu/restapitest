@@ -46,7 +46,7 @@ public class CommentService {
 	 */
 	public Long addComment(NewCommentDto newCommentDto) {
 		Post post = this.postRepository.findById(newCommentDto.getPostId()).get();
-		Comment comment = new Comment(post, newCommentDto.getContent(), newCommentDto.getAuthor(), LocalDateTime.now());
+		Comment comment = new Comment(post, newCommentDto.getAuthor(), newCommentDto.getContent(), LocalDateTime.now());
 
 		return this.commentRepository.save(comment).getId();
 	}
