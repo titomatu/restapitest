@@ -1,5 +1,7 @@
 package com.devskiller.tasks.blog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class Post {
 	private LocalDateTime creationDate;
 
 	@OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Comment> comments = new ArrayList<>();
 
 	public String getTitle() {
